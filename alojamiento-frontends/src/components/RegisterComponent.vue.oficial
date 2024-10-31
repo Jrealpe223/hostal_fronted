@@ -1,0 +1,56 @@
+<template>
+  <div>
+    <h2>Registro</h2>
+    <form @submit.prevent="register">
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" v-model="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" v-model="email" required />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" v-model="password" required />
+      </div>
+      <button type="submit">Registrar</button>
+    </form>
+    <p v-if="error">{{ error }}</p>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      name: '',
+      email: '',
+      password: '',
+      error: null,
+    };
+  },
+  methods: {
+    async register() {
+      try {
+        const response = await axios.post('http://localhost:8000/api/register', {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+        });
+        localStorage.setItem('token', response.data.token);
+        this.$router.push('/rooms'); // Redirige al componente de habitaciones
+      } catch (err) {
+        this.error = 'Error en el registro. Inténtalo de nuevo.';
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Estilos opcionales */
+</style>
+

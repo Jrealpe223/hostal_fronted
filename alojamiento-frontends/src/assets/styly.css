@@ -1,0 +1,173 @@
+/* Reseteo de márgenes y rellenos para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-image: url('@/assets/img_hotel.jpeg'); /* Asegúrate que la ruta de la imagen sea correcta */
+  background-size: 1950px 900px; /* La imagen de fondo cubrirá toda la pantalla */
+  background-position: center;
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+}
+
+/* ----- Contenedor general con el fondo blanco translúcido ----- */
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra alrededor del contenedor */
+  width: 100%;
+  max-width: 400px; /* Ancho máximo del formulario */
+  z-index: 2; /* Asegura que el formulario esté por encima del fondo */
+  text-align: left;
+}
+
+/* Título de la sección (aplica en registro, login y homepage) */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* Estructura de formularios (Registro y Login) */
+.form-register,
+.form-home,
+.form-login {
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- Campos de entrada en el formulario ----- */
+
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Estilo del checkbox */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* ----- Botones de Registro, Login y otros ----- */
+.btn-register,
+.btn-login,
+.btn-home,
+button[type="submit"],
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+}
+.btn2{
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 20px;
+}
+
+/* Efecto hover en los botones */
+.btn-register:hover,
+.btn-login:hover,
+button[type="submit"]:hover,
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  width: 300px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #2d965c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.register-link {
+  margin-top: 20px;
+}
+
+
+.right-bar {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  /*background-color: rgb(255, 255, 255, 0.9);*/
+  padding: 1em;
+  border-radius: 8px;
+
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.navbar2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
